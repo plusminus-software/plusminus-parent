@@ -10,6 +10,8 @@
     <packaging>pom</packaging>
 
     <name>Plusminus Parent</name>
+    <description>Maven parent POM for plusminus projects</description>
+    <url>https://github.com/plusminus-software/plusminus-parent</url>
 
     <licenses>
         <license>
@@ -18,10 +20,6 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
-    <scm>
-        <url>https://github.com/plusminus-software/plusminus-parent</url>
-    </scm>
 
     <developers>
         <developer>
@@ -34,6 +32,12 @@
             <timezone>Europe/Kyiv</timezone>
         </developer>
     </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/plusminus-software/plusminus-parent.git</connection>
+        <developerConnection>scm:git:ssh://github.com:plusminus-software/plusminus-parent.git</developerConnection>
+        <url>https://github.com/plusminus-software/plusminus-parent/tree/main</url>
+    </scm>
     
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -136,15 +140,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.7</version>
+                <version>3.14.0</version>
                 <configuration>
                     <rulesets>
                         <ruleset>pmd-ruleset.xml</ruleset>
                     </rulesets>
-                    <linkXRef>true</linkXRef>
-                    <sourceEncoding>UTF-8</sourceEncoding>
-                    <minimumTokens>100</minimumTokens>
-                    <targetJdk>1.8</targetJdk>
+                    <linkXRef>false</linkXRef>
                     <includeTests>true</includeTests>
                 </configuration>
                 <executions>
