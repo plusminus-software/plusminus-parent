@@ -4,20 +4,28 @@ Maven parent POM for plusminus-software projects
 ### How to release plusminus-parent?
 plusminus-parent's pom.xml does not include configuration for automatic upload to Maven Central to be used for private projects.
 So this project can be released manually only using the following steps:
-1. Sign pom.xml with gpg
+1. Install to local maven repository
 ```
-gpg -ab plusminus-parent-X.Y.pom
+mvn clean install
 ```
-2. Create a bundle
+2. Go to the `.m2` folder
+```
+cd ~/.m2/repository/software/plusminus/plusminus-parent
+```
+3. Sign pom.xml with gpg
+```
+sudo gpg -ab plusminus-parent-X.Y.pom
+```
+4. Create a bundle
 ```
 jar -cvf bundle.jar plusminus-parent-X.Y.pom plusminus-parent-X.Y.pom.asc
 ```
-3. Go to sonatype's nexus and upload a bundle.jar
+5. Go to sonatype's nexus and upload a bundle.jar
 
 https://s01.oss.sonatype.org/ -> Staging Upload -> Artifact bundle
 
-4. Release to maven central
+6. Release to maven central
 
-https://s01.oss.sonatype.org/ -> Staging Releases - > Release
+https://s01.oss.sonatype.org/ -> Staging Repositories - > Release
 
 More info: https://central.sonatype.org/publish/publish-manual/ 
