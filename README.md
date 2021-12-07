@@ -1,5 +1,5 @@
 # plusminus-parent
-Maven parent POM for plusminus-software projects
+Maven's parent POM for plusminus-software projects
 
 ### How to release plusminus-parent?
 plusminus-parent's pom.xml does not include configuration for automatic upload to Maven Central to be used for private projects.
