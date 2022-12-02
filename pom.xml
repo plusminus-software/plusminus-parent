@@ -6,7 +6,7 @@
 
     <groupId>software.plusminus</groupId>
     <artifactId>plusminus-parent</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <packaging>pom</packaging>
 
     <name>Plusminus Parent</name>
@@ -94,6 +94,20 @@
     
     <build>
         <plugins>
+            <!-- Force clean -->
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.4.1</version>
+                <executions>
+                    <execution>
+                        <id>auto-clean</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <!-- Static analyzers -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
