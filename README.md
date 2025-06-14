@@ -1,31 +1,37 @@
 # plusminus-parent
-Maven's parent POM for plusminus-software projects
+Parent POM for plusminus projects
 
-### How to release plusminus-parent?
-plusminus-parent's pom.xml does not include configuration for automatic upload to Maven Central to be used for private projects.
-So this project can be released manually only using the following steps:
-1. Install to local maven repository
-```
-mvn clean install
-```
-2. Go to the `.m2` folder
-```
-cd ~/.m2/repository/software/plusminus/plusminus-parent
-```
-3. Sign pom.xml with gpg
-```
-sudo gpg -ab plusminus-parent-X.Y.pom
-```
-4. Create a bundle
-```
-jar -cvf bundle.jar plusminus-parent-X.Y.pom plusminus-parent-X.Y.pom.asc
-```
-5. Go to sonatype's nexus and upload a bundle.jar
+## How it relates to other parent projects
+1. plusminus-parent - base parent project
+2. plusminus-parent-public - extends plusminus-parent with configured deploying to Maven Central repo
+3. plusminus-parent-configs - set of configurations of different Maven plugins (such as Checkstyle, PMD etc.) that can be used in plusminus-parent as a dependency
 
-https://s01.oss.sonatype.org/ -> Staging Upload -> Artifact bundle
-
-6. Release to maven central
-
-https://s01.oss.sonatype.org/ -> Staging Repositories - > Release
-
-More info: https://central.sonatype.org/publish/publish-manual/ 
+## How to release plusminus-parent?
+Please add two plugins into pom.xml (but do not commit them!) just like on plusminus-parent-public:
+```
+<plugin>
+    <groupId>org.sonatype.central</groupId>
+    <artifactId>central-publishing-maven-plugin</artifactId>
+    <version>0.7.0</version>
+    <extensions>true</extensions>
+    <configuration>
+        <publishingServerId>central</publishingServerId>
+        <autoPublish>true</autoPublish>
+        <waitUntil>published</waitUntil>
+    </configuration>
+</plugin>
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-gpg-plugin</artifactId>
+    <version>1.6</version>
+    <executions>
+        <execution>
+            <id>sign-artifacts</id>
+            <phase>deploy</phase>
+            <goals>
+                <goal>sign</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+```
