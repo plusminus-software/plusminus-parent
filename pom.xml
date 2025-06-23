@@ -6,7 +6,7 @@
 
     <groupId>software.plusminus</groupId>
     <artifactId>plusminus-parent</artifactId>
-    <version>1.4</version>
+    <version>1.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Plusminus Parent</name>
@@ -136,7 +136,7 @@
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>8.22</version>
+                        <version>9.1</version>
                     </dependency>
                     <dependency>
                         <groupId>software.plusminus</groupId>
@@ -163,8 +163,8 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>analyze-compile</id>
-                        <phase>compile</phase>
+                        <id>spotbugs-check</id>
+                        <phase>process-test-classes</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
