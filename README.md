@@ -12,6 +12,10 @@ Please run this command
 ```
 mvn clean verify gpg:sign org.sonatype.central:central-publishing-maven-plugin:0.7.0:publish -DpublishingServerId=central -DautoPublish=true -DwaitUntil=published
 ```
+If you want to release SNAPSHOT version then you can omit gpg sign stage
+```
+mvn clean verify org.sonatype.central:central-publishing-maven-plugin:0.7.0:publish -DpublishingServerId=central -DautoPublish=true -DwaitUntil=published
+```
 
 ## How to use SNAPSHOT version of parent?
 You must add this section to your pom.xml:
