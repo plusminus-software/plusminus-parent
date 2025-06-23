@@ -37,6 +37,7 @@
         <connection>scm:git:git://github.com/plusminus-software/plusminus-parent.git</connection>
         <developerConnection>scm:git:ssh://github.com:plusminus-software/plusminus-parent.git</developerConnection>
         <url>https://github.com/plusminus-software/plusminus-parent/tree/main</url>
+        <tag>HEAD</tag>
     </scm>
     
     <parent>
@@ -261,6 +262,7 @@
                 <executions>
                     <execution>
                         <id>attach-sources</id>
+                        <phase>verify</phase>
                         <goals>
                             <goal>jar-no-fork</goal>
                         </goals>
@@ -274,6 +276,7 @@
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
+                        <phase>verify</phase>
                         <goals>
                             <goal>jar</goal>
                         </goals>
