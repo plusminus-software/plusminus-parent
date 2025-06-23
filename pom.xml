@@ -6,7 +6,7 @@
 
     <groupId>software.plusminus</groupId>
     <artifactId>plusminus-parent</artifactId>
-    <version>1.2</version>
+    <version>1.3</version>
     <packaging>pom</packaging>
 
     <name>Plusminus Parent</name>
@@ -139,7 +139,7 @@
                     </dependency>
                     <dependency>
                         <groupId>software.plusminus</groupId>
-                        <artifactId>plusminus-configs</artifactId>
+                        <artifactId>plusminus-parent-configs</artifactId>
                         <version>1.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
@@ -172,7 +172,7 @@
                 <dependencies>
                     <dependency>
                         <groupId>software.plusminus</groupId>
-                        <artifactId>plusminus-configs</artifactId>
+                        <artifactId>plusminus-parent-configs</artifactId>
                         <version>1.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
@@ -200,7 +200,7 @@
                 <dependencies>
                     <dependency>
                         <groupId>software.plusminus</groupId>
-                        <artifactId>plusminus-configs</artifactId>
+                        <artifactId>plusminus-parent-configs</artifactId>
                         <version>1.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
