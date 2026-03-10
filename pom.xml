@@ -159,7 +159,7 @@
                     </dependency>
                     <dependency>
                         <groupId>software.plusminus</groupId>
-                        <artifactId>plusminus-parent-configs</artifactId>
+                        <artifactId>plusminus-configs</artifactId>
                         <version>1.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
@@ -192,7 +192,7 @@
                 <dependencies>
                     <dependency>
                         <groupId>software.plusminus</groupId>
-                        <artifactId>plusminus-parent-configs</artifactId>
+                        <artifactId>plusminus-configs</artifactId>
                         <version>1.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
@@ -220,7 +220,7 @@
                 <dependencies>
                     <dependency>
                         <groupId>software.plusminus</groupId>
-                        <artifactId>plusminus-parent-configs</artifactId>
+                        <artifactId>plusminus-configs</artifactId>
                         <version>1.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
