@@ -4,6 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+        <relativePath/>
+    </parent>
+
     <groupId>software.plusminus</groupId>
     <artifactId>plusminus-parent</artifactId>
     <version>1.5-SNAPSHOT</version>
@@ -13,6 +20,20 @@
     <description>Parent POM for plusminus projects</description>
     <url>https://github.com/plusminus-software/plusminus-parent</url>
 
+    <scm>
+        <url>https://github.com/plusminus-software/plusminus-parent</url>
+        <connection>scm:git:https://github.com/plusminus-software/plusminus-parent.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/plusminus-software/plusminus-parent.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    <issueManagement>
+        <system>Github Issues</system>
+        <url>https://github.com/plusminus-software/plusminus-parent/issues</url>
+    </issueManagement>
+    <ciManagement>
+        <system>Github Actions</system>
+        <url>https://github.com/plusminus-software/plusminus-parent/actions</url>
+    </ciManagement>
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -20,7 +41,6 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
     <developers>
         <developer>
             <name>Taras Shpek</name>
@@ -32,20 +52,6 @@
             <timezone>Europe/Kyiv</timezone>
         </developer>
     </developers>
-
-    <scm>
-        <connection>scm:git:git://github.com/plusminus-software/plusminus-parent.git</connection>
-        <developerConnection>scm:git:ssh://github.com:plusminus-software/plusminus-parent.git</developerConnection>
-        <url>https://github.com/plusminus-software/plusminus-parent/tree/main</url>
-        <tag>HEAD</tag>
-    </scm>
-    
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
-        <relativePath/>
-    </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -302,5 +308,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
