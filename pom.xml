@@ -105,6 +105,32 @@
     
     <build>
         <plugins>
+            <!-- Unpack shared lombok.config from plusminus-configs -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack-lombok-config</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>software.plusminus</groupId>
+                                    <artifactId>plusminus-configs</artifactId>
+                                    <version>1.0-SNAPSHOT</version>
+                                    <includes>lombok.config</includes>
+                                    <outputDirectory>${project.basedir}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <!-- Force clean -->
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
@@ -245,6 +271,12 @@
                     </excludes>
                 </configuration>
                 <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
                     <execution>
                         <id>jacoco-report</id>
                         <phase>test</phase>
