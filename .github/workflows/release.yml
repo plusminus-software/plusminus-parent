@@ -12,10 +12,19 @@ on:
       - '.gitignore'
       - 'LICENSE'
   workflow_dispatch:
+    inputs:
+      module:
+        description: 'Choose module to deploy'
+        required: true
+        type: choice
+        options:
+          - "plusminus-configs"
+          - "plusminus-parent"
 
 jobs:
   release:
     uses: plusminus-software/plusminus-opensource/.github/workflows/maven-central-release.yml@main
     with:
       java-version: '8'
+      module: ${{ github.event.inputs.module }}
     secrets: inherit

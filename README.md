@@ -1,11 +1,19 @@
 # plusminus-parent
-Parent POM for plusminus projects
+Parent POM for plusminus projects.
 
-## How it relates to other parent projects?
-1. plusminus-parent - base parent project
-2. plusminus-parent-public - extends plusminus-parent with configured deploying to Maven Central repo
-3. plusminus-parent-configs - set of configurations of different Maven plugins (such as Checkstyle, PMD etc.) that can be used in plusminus-parent as a dependency.
-Created specifically to have SNAPSHOT artifact with configs that can be used in the released plusminus-parent.
+This repository hosts two independent Maven modules that are **not** wired into a
+root multi-module (reactor) build. Each is a standalone project, released on its own:
+
+- [`plusminus-parent/`](plusminus-parent) — the base parent POM
+  (`software.plusminus:plusminus-parent`) inherited by other plusminus projects.
+- [`plusminus-configs/`](plusminus-configs) — a set of Maven plugin configurations
+  (Checkstyle, PMD, SpotBugs, lombok.config, etc.), published as a SNAPSHOT artifact
+  (`software.plusminus:plusminus-configs`) that `plusminus-parent` consumes as a dependency.
+
+There is intentionally no aggregator `pom.xml` at the repository root. The release
+workflow builds and publishes each module directory independently — either all of them
+(on push) or a single one selected via the `module` input of the **Release** workflow
+(`workflow_dispatch`), mirroring how `plusminus-security` targets individual modules.
 
 ## How to release plusminus-parent?
 Please run this command
